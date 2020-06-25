@@ -1,6 +1,6 @@
 import random
 
-def mainFunc():
+def printQuote():
   # print("Keep it logically awesome.")
 
   f = open("quotes.txt")
@@ -9,7 +9,14 @@ def mainFunc():
 
   last = 13
   rnd = random.randint(0, last)
-  print(quotes[rnd])
+  print(quotes[rnd], end=" ")
+
+def writeQuote():
+  quote = input("Write your quote: :")
+  f = open("quotes.txt", "a")
+  f.writelines(quote)
+  f.close()
 
 if __name__== "__main__":
-  mainFunc()
+  writeQuote()
+  printQuote()
